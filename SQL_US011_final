@@ -1,0 +1,5 @@
+create table tbl_cust_usg(CUSTID int, CALLSEC int, DATAKB int, DATE date)
+
+insert into TBL_CUST_USG values(123,365,2300,'2021-10-01')
+select * from TBL_CUST_USG where CUSTID=123
+
