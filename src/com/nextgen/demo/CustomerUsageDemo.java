@@ -7,7 +7,7 @@ import com.nextgen.bean.CustomerUsage;
 import com.nextgen.dao.CustomerUsageDAO;
 
 // create this table beforehand, as it's supposed to exist already)
-// create table TBL_CUST_USG(CUSTID int, CALLSEC int, DATAKB int, DATE date, PRIMARY KEY (CUSTID,DATE))
+// create table TBL_CUST_USG(CUSTID int, CALLSEC int, DATAKB int, DATE date)
 
 
 public class CustomerUsageDemo {
