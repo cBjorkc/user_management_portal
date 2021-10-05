@@ -1,4 +1,3 @@
-   
 package com.nextgen.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,7 +22,7 @@ public boolean insertUsageData(CustomerUsage usg){
 		
 		try{
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-			Connection con= DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+			con= DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
 			
 			String insertQuery="insert into tbl_cust_usg values(?,?,?,?)";
 			PreparedStatement ps= con.prepareStatement(insertQuery);
@@ -66,7 +65,7 @@ public boolean insertUsageData(CustomerUsage usg){
 		
 		try{
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-			Connection con= DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+			con= DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
 			
 			String selectQuery="select * from tbl_cust_usg where tbl_cust_usg.custId =?";
 			PreparedStatement ps= con.prepareStatement(selectQuery);

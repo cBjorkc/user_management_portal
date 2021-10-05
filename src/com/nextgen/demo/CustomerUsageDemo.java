@@ -7,8 +7,6 @@ import java.util.Scanner;
 import com.nextgen.bean.CustomerUsage;
 import com.nextgen.dao.CustomerUsageDAO;
 
-// create this table beforehand, as it's supposed to exist already)
-// create table TBL_CUST_USG(CUSTID int, CALLSEC int, DATAKB int, DATE date)
 
 
 public class CustomerUsageDemo {
@@ -35,13 +33,13 @@ public class CustomerUsageDemo {
 		
 		try {
 			while (!answer.equals("")) {
-				System.out.println("Would you like to look for a customer or enter new usage data? Please enter 'search' or 'insert' or press enter to exit");
+				System.out.println("Would you like to view your usage details? Please enter 'search' or press enter to exit");
 			    answer = sc.nextLine();
 			    
 			    if (answer.toLowerCase().equals("search")){
 			    	System.out.println("Please enter customer ID:");
 			    	answer = sc.nextLine();
-			    	System.out.println("Looking for customer Usage Data with customer registration ID "+answer);
+			    	System.out.println("Show Usage details for customer registration ID "+answer);
 			    	CustomerUsageDAO dao = new CustomerUsageDAO();
 			    	matching = dao.selectCustomer(Integer.parseInt(answer));
 			    	if(matching.size()>0){
@@ -53,29 +51,7 @@ public class CustomerUsageDemo {
 					} else {
 						System.out.println("No customers with specific ID found");
 					}
-			    } else if (answer.toLowerCase().equals("insert")){
-			    	System.out.println("Please enter customer ID:");
-			    	int cust_id = sc.nextInt();
-			    	sc.nextLine();
-			    	System.out.println("Please enter call duration in seconds:");
-			    	int call_dur = sc.nextInt();
-			    	sc.nextLine();
-			    	System.out.println("Please enter internet data usage in KB:");
-			    	int internet_kb = sc.nextInt();
-			    	sc.nextLine();
-			    	System.out.println(internet_kb);
-			    	System.out.println("Please enter date of usage in 'yyyy-mm-dd':");
-			    	String usrdate = sc.nextLine();
-			    	
-			    	CustomerUsage input_user = new CustomerUsage(cust_id,call_dur,internet_kb,usrdate);
-					newUsgData.add(input_user);
-					CustomerUsageDAO dao = new CustomerUsageDAO();
-					Boolean success = dao.insertUsageData(input_user);
-					if (success == true){
-						System.out.println("Successfully added usage details.");
-					} else {
-						System.out.println("Something went wrong, please try again.");
-					}
+			    
 			    }
 			    }
 				sc.close();
