@@ -1,3 +1,4 @@
+   
 package com.nextgen.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +12,7 @@ import com.nextgen.bean.CustomerUsage;
 
 public class CustomerUsageDAO {
 
-	public static final String JDBC_URL = "jdbc:derby:C:\\Users\\2072258\\MyDB;create=true";
+	public static final String JDBC_URL = "jdbc:derby:C:\\Users\\2072308\\MyDB;create=true";
 	public static final String USERNAME="test";
 	public static final String PASSWORD="test";
 	
